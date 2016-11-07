@@ -287,7 +287,7 @@ public class BDD {
         else{
             try{
                 String responsable = (String) tblAssoc.getValueAt(ligne, 3);
-                ((ModelPrat)tblAssoc.getModel()).removeRow(ligne);
+                ((ModelAssoc)tblAssoc.getModel()).removeRow(ligne);
                 Class.forName(pilote);
                 conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
                 stmt = conn.createStatement();
@@ -312,7 +312,7 @@ public class BDD {
             while(rs.next()){
                 ligne = rs.getInt("count(*)");
             }
-            stmt.executeUpdate("INSERT INTO pratiquer (refAsso, ville, adresse, nomResponsable) VALUES ('" + refAsso + "', '" + ville + "'" + adresse + "', '" + responsable + "')");
+            stmt.executeUpdate("INSERT INTO association (refAsso, ville, adresse, nomResponsable) VALUES ('" + refAsso + "', '" + ville + "', '" + adresse + "', '" + responsable + "')");
             tblAssoc.setValueAt(refAsso, ligne, 0);
             tblAssoc.setValueAt(ville, ligne, 1);
             tblAssoc.setValueAt(adresse, ligne, 2);

@@ -21,6 +21,11 @@ public class Administration extends javax.swing.JFrame {
         cbxAssoc.setVisible(false);
         cbxSport.setVisible(false);
         panelAsso.setVisible(false);
+        txtAdresse.setVisible(false);
+        txtVille.setVisible(false);
+        txtResp.setVisible(false);
+        txtRefAsso.setVisible(false);
+        btnOkAsso.setVisible(false);
         
     }
 
@@ -50,6 +55,11 @@ public class Administration extends javax.swing.JFrame {
         panelAsso = new javax.swing.JPanel();
         btnAjoutAsso = new javax.swing.JButton();
         btnSupAsso = new javax.swing.JButton();
+        btnOkAsso = new javax.swing.JToggleButton();
+        txtAdresse = new javax.swing.JTextField();
+        txtVille = new javax.swing.JTextField();
+        txtResp = new javax.swing.JTextField();
+        txtRefAsso = new javax.swing.JTextField();
         panelPrat = new javax.swing.JPanel();
         btnAjoutP = new javax.swing.JButton();
         btnSupPrat = new javax.swing.JButton();
@@ -254,8 +264,33 @@ public class Administration extends javax.swing.JFrame {
         );
 
         btnAjoutAsso.setText("Ajouter");
+        btnAjoutAsso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjoutAssoActionPerformed(evt);
+            }
+        });
 
         btnSupAsso.setText("Supprimer");
+        btnSupAsso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupAssoActionPerformed(evt);
+            }
+        });
+
+        btnOkAsso.setText("Ok");
+        btnOkAsso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkAssoActionPerformed(evt);
+            }
+        });
+
+        txtAdresse.setText("adresse");
+
+        txtVille.setText("ville");
+
+        txtResp.setText("responsable");
+
+        txtRefAsso.setText("refAsso");
 
         javax.swing.GroupLayout panelAssoLayout = new javax.swing.GroupLayout(panelAsso);
         panelAsso.setLayout(panelAssoLayout);
@@ -263,9 +298,16 @@ public class Administration extends javax.swing.JFrame {
             panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAssoLayout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(btnAjoutAsso, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtAdresse)
+                    .addComponent(btnAjoutAsso, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .addComponent(txtRefAsso))
                 .addGap(35, 35, 35)
-                .addComponent(btnSupAsso)
+                .addGroup(panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSupAsso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnOkAsso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtVille, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtResp))
                 .addGap(42, 42, 42))
         );
         panelAssoLayout.setVerticalGroup(
@@ -275,7 +317,17 @@ public class Administration extends javax.swing.JFrame {
                 .addGroup(panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSupAsso)
                     .addComponent(btnAjoutAsso))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRefAsso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtResp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnOkAsso)
+                .addContainerGap())
         );
 
         btnAjoutP.setText("Ajouter");
@@ -607,6 +659,9 @@ public class Administration extends javax.swing.JFrame {
         panelSport.setVisible(false);
         panelAccueil.setVisible(false);
         panelPratiquer.setVisible(false);
+        panelPrat.setVisible(false);
+        panelS.setVisible(false);
+        panelA.setVisible(false);
         panelAsso.setVisible(true);
         panelAssoc.setVisible(true);
         req.afficheAssoc(tblAssoc);
@@ -653,6 +708,32 @@ public class Administration extends javax.swing.JFrame {
         btnOkPrat.setVisible(false);
     }//GEN-LAST:event_btnOkPratActionPerformed
 
+    private void btnAjoutAssoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjoutAssoActionPerformed
+        txtAdresse.setVisible(true);
+        txtVille.setVisible(true);
+        txtResp.setVisible(true);
+        txtRefAsso.setVisible(true);
+        btnOkAsso.setVisible(true);
+    }//GEN-LAST:event_btnAjoutAssoActionPerformed
+
+    private void btnOkAssoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkAssoActionPerformed
+        String refAsso = txtRefAsso.getText();
+        String adresse = txtAdresse.getText();
+        String responsable = txtResp.getText();
+        String ville = txtVille.getText();
+        req.ajoutAssoc(tblAssoc, refAsso, ville, adresse, responsable);
+        txtAdresse.setVisible(false);
+        txtVille.setVisible(false);
+        txtResp.setVisible(false);
+        txtRefAsso.setVisible(false);
+        btnOkAsso.setVisible(false);
+    }//GEN-LAST:event_btnOkAssoActionPerformed
+
+    private void btnSupAssoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupAssoActionPerformed
+        int ligne = tblAssoc.getSelectedRow();
+        req.supAssoc(tblAssoc, ligne);
+    }//GEN-LAST:event_btnSupAssoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -671,6 +752,7 @@ public class Administration extends javax.swing.JFrame {
     private javax.swing.JButton btnAjoutS;
     private javax.swing.JButton btnAssoc;
     private javax.swing.JButton btnOkA;
+    private javax.swing.JToggleButton btnOkAsso;
     private javax.swing.JButton btnOkPrat;
     private javax.swing.JToggleButton btnOkS;
     private javax.swing.JButton btnPrat;
@@ -701,6 +783,10 @@ public class Administration extends javax.swing.JFrame {
     private javax.swing.JTable tblAssoc;
     private javax.swing.JTable tblPrat;
     private javax.swing.JTable tblSport;
+    private javax.swing.JTextField txtAdresse;
+    private javax.swing.JTextField txtRefAsso;
+    private javax.swing.JTextField txtResp;
     private javax.swing.JTextField txtSport;
+    private javax.swing.JTextField txtVille;
     // End of variables declaration//GEN-END:variables
 }

@@ -487,9 +487,18 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="41" max="32767" attributes="0"/>
-                      <Component id="btnAjoutAsso" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="txtAdresse" max="32767" attributes="0"/>
+                          <Component id="btnAjoutAsso" pref="90" max="32767" attributes="0"/>
+                          <Component id="txtRefAsso" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="btnSupAsso" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnSupAsso" max="32767" attributes="0"/>
+                          <Component id="btnOkAsso" max="32767" attributes="0"/>
+                          <Component id="txtVille" alignment="1" max="32767" attributes="0"/>
+                          <Component id="txtResp" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -502,7 +511,19 @@
                           <Component id="btnSupAsso" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAjoutAsso" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="73" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtVille" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtRefAsso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtAdresse" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtResp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnOkAsso" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -512,10 +533,44 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ajouter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAjoutAssoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSupAsso">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Supprimer"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSupAssoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="btnOkAsso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ok"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOkAssoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAdresse">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="adresse"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVille">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ville"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtResp">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="responsable"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtRefAsso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="refAsso"/>
               </Properties>
             </Component>
           </SubComponents>
