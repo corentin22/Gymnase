@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author Corentin cadieu
@@ -44,9 +46,9 @@ public class Reservation extends javax.swing.JFrame {
         radA = new javax.swing.JRadioButton();
         radB = new javax.swing.JRadioButton();
         radC = new javax.swing.JRadioButton();
-        txtHeure = new javax.swing.JTextField();
-        txtDate = new javax.swing.JTextField();
         btnOK = new javax.swing.JButton();
+        jCal = new com.toedter.calendar.JDateChooser();
+        cbxHeure = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +88,8 @@ public class Reservation extends javax.swing.JFrame {
             }
         });
 
+        cbxHeure.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "00" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,11 +98,16 @@ public class Reservation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(radAST)
-                        .addGap(16, 16, 16)
-                        .addComponent(radCOB)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(radAST)
+                                .addGap(16, 16, 16)
+                                .addComponent(radCOB))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cbxHeure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jCal, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(radTCP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -106,18 +115,9 @@ public class Reservation extends javax.swing.JFrame {
                         .addGap(0, 57, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
                             .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(14, 14, 14)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                                    .addComponent(txtHeure)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -138,13 +138,13 @@ public class Reservation extends javax.swing.JFrame {
                     .addComponent(radB)
                     .addComponent(radC))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtHeure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxHeure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -154,7 +154,7 @@ public class Reservation extends javax.swing.JFrame {
                     .addComponent(radTCSB))
                 .addGap(38, 38, 38)
                 .addComponent(btnOK)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -162,7 +162,7 @@ public class Reservation extends javax.swing.JFrame {
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
         String salle, assoc;
-        String date;
+        Date dateI;
         String heure;
         Connection conn;
         Statement stmt;
@@ -193,14 +193,16 @@ public class Reservation extends javax.swing.JFrame {
         if(radTCSB.isSelected()){
             assoc = "TCSB";
         }
-        date = txtDate.getText();
-        heure = txtHeure.getText() + ":00:00";
+        dateI = jCal.getDate();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String format = formatter.format(dateI);
+        heure = cbxHeure.getSelectedItem()+ ":00:00";
         
         try{
             Class.forName(pilote);
             conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
             stmt = conn.createStatement();
-            stmt.executeUpdate("insert into reservation values('"+ salle +"','"+ date +"','"+ heure +"','"+ assoc +"')");
+            stmt.executeUpdate("insert into reservation values('"+ salle +"','"+ format +"','"+ heure +"','"+ assoc +"')");
         }
         catch(SQLException sqlE){
             System.out.println("ERREUR SQL : " + sqlE.getMessage());
@@ -247,6 +249,8 @@ public class Reservation extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOK;
+    private javax.swing.JComboBox<String> cbxHeure;
+    private com.toedter.calendar.JDateChooser jCal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -260,7 +264,5 @@ public class Reservation extends javax.swing.JFrame {
     private javax.swing.ButtonGroup radGroupSalle;
     private javax.swing.JRadioButton radTCP;
     private javax.swing.JRadioButton radTCSB;
-    private javax.swing.JTextField txtDate;
-    private javax.swing.JTextField txtHeure;
     // End of variables declaration//GEN-END:variables
 }
