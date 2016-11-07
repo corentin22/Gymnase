@@ -13,7 +13,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModelAssoc extends AbstractTableModel{
     private String[] nomColonnes = {"Reference association", "Ville", "Adresse", "Nom du responsable"};
-    private Object[][] data = new Object[10][2];
+    private Object[][] data = new Object[10][4];
     
     
     @Override
