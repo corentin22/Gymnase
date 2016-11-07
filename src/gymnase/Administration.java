@@ -20,6 +20,7 @@ public class Administration extends javax.swing.JFrame {
         btnOkPrat.setVisible(false);
         cbxAssoc.setVisible(false);
         cbxSport.setVisible(false);
+        panelAsso.setVisible(false);
         
     }
 
@@ -27,7 +28,6 @@ public class Administration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelAsso = new javax.swing.JPanel();
         btnSport = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnPrat = new javax.swing.JButton();
@@ -47,6 +47,9 @@ public class Administration extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblPrat = new javax.swing.JTable();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        panelAsso = new javax.swing.JPanel();
+        btnAjoutAsso = new javax.swing.JButton();
+        btnSupAsso = new javax.swing.JButton();
         panelPrat = new javax.swing.JPanel();
         btnAjoutP = new javax.swing.JButton();
         btnSupPrat = new javax.swing.JButton();
@@ -64,17 +67,6 @@ public class Administration extends javax.swing.JFrame {
         btnOkA = new javax.swing.JButton();
         comboRef = new javax.swing.JComboBox<>();
         comboSport = new javax.swing.JComboBox<>();
-
-        javax.swing.GroupLayout panelAssoLayout = new javax.swing.GroupLayout(panelAsso);
-        panelAsso.setLayout(panelAssoLayout);
-        panelAssoLayout.setHorizontalGroup(
-            panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        panelAssoLayout.setVerticalGroup(
-            panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -261,6 +253,31 @@ public class Administration extends javax.swing.JFrame {
                     .addContainerGap(269, Short.MAX_VALUE)))
         );
 
+        btnAjoutAsso.setText("Ajouter");
+
+        btnSupAsso.setText("Supprimer");
+
+        javax.swing.GroupLayout panelAssoLayout = new javax.swing.GroupLayout(panelAsso);
+        panelAsso.setLayout(panelAssoLayout);
+        panelAssoLayout.setHorizontalGroup(
+            panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAssoLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addComponent(btnAjoutAsso, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnSupAsso)
+                .addGap(42, 42, 42))
+        );
+        panelAssoLayout.setVerticalGroup(
+            panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAssoLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(panelAssoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSupAsso)
+                    .addComponent(btnAjoutAsso))
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+
         btnAjoutP.setText("Ajouter");
         btnAjoutP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,6 +449,7 @@ public class Administration extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLayeredPane1.setLayer(panelAsso, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(panelPrat, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(panelS, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(panelA, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -454,6 +472,11 @@ public class Administration extends javax.swing.JFrame {
                     .addGap(41, 41, 41)
                     .addComponent(panelA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(42, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap(30, Short.MAX_VALUE)
+                    .addComponent(panelAsso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(28, Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -471,6 +494,11 @@ public class Administration extends javax.swing.JFrame {
                     .addGap(14, 14, 14)
                     .addComponent(panelA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(23, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelAsso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(29, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -495,7 +523,7 @@ public class Administration extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -515,7 +543,7 @@ public class Administration extends javax.swing.JFrame {
                     .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -579,6 +607,7 @@ public class Administration extends javax.swing.JFrame {
         panelSport.setVisible(false);
         panelAccueil.setVisible(false);
         panelPratiquer.setVisible(false);
+        panelAsso.setVisible(true);
         panelAssoc.setVisible(true);
         req.afficheAssoc(tblAssoc);
     }//GEN-LAST:event_btnAssocActionPerformed
@@ -637,6 +666,7 @@ public class Administration extends javax.swing.JFrame {
     private javax.swing.JLayeredPane MainPanel;
     private javax.swing.JButton btnAccueil;
     private javax.swing.JButton btnAjoutA;
+    private javax.swing.JButton btnAjoutAsso;
     private javax.swing.JButton btnAjoutP;
     private javax.swing.JButton btnAjoutS;
     private javax.swing.JButton btnAssoc;
@@ -646,6 +676,7 @@ public class Administration extends javax.swing.JFrame {
     private javax.swing.JButton btnPrat;
     private javax.swing.JButton btnSport;
     private javax.swing.JButton btnSupA;
+    private javax.swing.JButton btnSupAsso;
     private javax.swing.JButton btnSupPrat;
     private javax.swing.JButton btnSupS;
     private javax.swing.JComboBox<String> cbxAssoc;

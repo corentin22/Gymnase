@@ -122,7 +122,7 @@ public class BDD {
             Class.forName(pilote);
             conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * from pratiquer");
+            rs = stmt.executeQuery("select * from association");
             int i = 0;
             while(rs.next()){
                 String refAssoc = rs.getString("refasso");
