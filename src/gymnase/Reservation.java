@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gymnase;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,16 +12,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 /**
  *
  * @author Corentin cadieu
  */
-public class Reservation extends javax.swing.JFrame {
+public class Reservation extends javax.swing.JDialog {
 
     /**
-     * Creates new form Reservation
+     * Creates new form Reserv
      */
-    public Reservation() {
+    public Reservation(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -33,8 +36,6 @@ public class Reservation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        radGroupSalle = new javax.swing.ButtonGroup();
-        radGroupAssoc = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -50,7 +51,7 @@ public class Reservation extends javax.swing.JFrame {
         jCal = new com.toedter.calendar.JDateChooser();
         cbxHeure = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Reference salle : ");
 
@@ -60,25 +61,18 @@ public class Reservation extends javax.swing.JFrame {
 
         jLabel4.setText("Association :");
 
-        radGroupAssoc.add(radAST);
         radAST.setText("AST");
 
-        radGroupAssoc.add(radCOB);
         radCOB.setText("COB");
 
-        radGroupAssoc.add(radTCP);
         radTCP.setText("TCP");
 
-        radGroupAssoc.add(radTCSB);
         radTCSB.setText("TCSB");
 
-        radGroupSalle.add(radA);
         radA.setText("A");
 
-        radGroupSalle.add(radB);
         radB.setText("B");
 
-        radGroupSalle.add(radC);
         radC.setText("C");
 
         btnOK.setText("OK");
@@ -167,7 +161,7 @@ public class Reservation extends javax.swing.JFrame {
         Connection conn;
         Statement stmt;
         ResultSet rs;
-        
+
         String pilote = "org.gjt.mm.mysql.Driver";
         salle = "A";
         assoc = "A";
@@ -180,7 +174,7 @@ public class Reservation extends javax.swing.JFrame {
         if(radC.isSelected()){
             salle = "C";
         }
-        
+
         if(radAST.isSelected()){
             assoc = "AST";
         }
@@ -197,7 +191,7 @@ public class Reservation extends javax.swing.JFrame {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String format = formatter.format(dateI);
         heure = cbxHeure.getSelectedItem()+ ":00:00";
-        
+
         try{
             Class.forName(pilote);
             conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
@@ -208,7 +202,7 @@ public class Reservation extends javax.swing.JFrame {
             System.out.println("ERREUR SQL : " + sqlE.getMessage());
         }
         catch(ClassNotFoundException cnfE){
-                System.out.println("ERREUR SQL : " + cnfE.getMessage());
+            System.out.println("ERREUR SQL : " + cnfE.getMessage());
         }
     }//GEN-LAST:event_btnOKActionPerformed
 
@@ -238,11 +232,19 @@ public class Reservation extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reservation().setVisible(true);
+                Reservation dialog = new Reservation(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
@@ -260,8 +262,6 @@ public class Reservation extends javax.swing.JFrame {
     private javax.swing.JRadioButton radB;
     private javax.swing.JRadioButton radC;
     private javax.swing.JRadioButton radCOB;
-    private javax.swing.ButtonGroup radGroupAssoc;
-    private javax.swing.ButtonGroup radGroupSalle;
     private javax.swing.JRadioButton radTCP;
     private javax.swing.JRadioButton radTCSB;
     // End of variables declaration//GEN-END:variables

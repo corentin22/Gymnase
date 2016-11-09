@@ -72,24 +72,24 @@ public class Gymnase extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResActionPerformed
-        Reservation f1 = new Reservation();
-        f1.setSize(500, 400);
-        f1.setVisible(true);
+        Reservation fRes = new Reservation(this, true);
+        fRes.setSize(500, 400);
+        fRes.setVisible(true);
     }//GEN-LAST:event_btnResActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Administration f1 = new Administration();
-        f1.setSize(700, 500);
-        f1.setVisible(true);
+        Administration fAdmin = new Administration(this, true);
+        fAdmin.setSize(700, 500);
+        fAdmin.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        Gymnase f1 = new Gymnase();
-        f1.setSize(500, 400);
-        f1.setVisible(true);
+        Gymnase fMain = new Gymnase();
+        fMain.setSize(500, 400);
+        fMain.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

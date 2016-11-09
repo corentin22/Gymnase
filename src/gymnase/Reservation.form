@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="radGroupSalle">
-    </Component>
-    <Component class="javax.swing.ButtonGroup" name="radGroupAssoc">
-    </Component>
-  </NonVisualComponents>
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -29,12 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="radAST" min="-2" max="-2" attributes="0"/>
@@ -42,8 +36,8 @@
                               <Component id="radCOB" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="cbxHeure" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCal" min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="cbxHeure" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCal" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -52,7 +46,7 @@
                       <Component id="radTCSB" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -85,8 +79,8 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCal" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCal" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -131,57 +125,36 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="radAST">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupAssoc"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="AST"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radCOB">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupAssoc"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="COB"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radTCP">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupAssoc"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="TCP"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radTCSB">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupAssoc"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="TCSB"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radA">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupSalle"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="A"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radB">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupSalle"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="B"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radC">
       <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="radGroupSalle"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="C"/>
       </Properties>
     </Component>
