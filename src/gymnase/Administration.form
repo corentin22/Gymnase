@@ -462,21 +462,34 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtAdresse" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnAjoutAsso" alignment="1" pref="90" max="32767" attributes="0"/>
-                          <Component id="txtRefAsso" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnAjoutAsso" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="btnModifierAsso" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnSupAsso" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtRefAsso" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtAdresse" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtResp" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtVille" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                              <Component id="btnOkAsso" min="-2" pref="90" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnSupAsso" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnOkAsso" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtVille" alignment="1" max="32767" attributes="0"/>
-                          <Component id="txtResp" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -487,6 +500,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnSupAsso" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAjoutAsso" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnModifierAsso" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -531,24 +545,20 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAdresse">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="adresse"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtVille">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ville"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtResp">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="responsable"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRefAsso">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnModifierAsso">
               <Properties>
-                <Property name="text" type="java.lang.String" value="refAsso"/>
+                <Property name="text" type="java.lang.String" value="Modifier"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifierAssoActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

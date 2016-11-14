@@ -325,4 +325,8 @@ public class BDD {
                 System.out.println("ERREUR SQL : " + cnfE.getMessage());
         }
     }
+
+    public void modifAssoc(JTable tblAssoc, String mrefAsso, String madresse, String madresse0, String mresponsable) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
