@@ -86,17 +86,20 @@ public class Administration extends javax.swing.JDialog {
         cbxAssoc = new javax.swing.JComboBox<>();
         cbxSport = new javax.swing.JComboBox<>();
         btnOkPrat = new javax.swing.JButton();
+        btnModifierPrat = new javax.swing.JButton();
         panelS = new javax.swing.JPanel();
         btnAjoutS = new javax.swing.JButton();
         txtSport = new javax.swing.JTextField();
         btnOkS = new javax.swing.JToggleButton();
         btnSupS = new javax.swing.JButton();
+        btnModifierSport = new javax.swing.JButton();
         panelA = new javax.swing.JPanel();
         btnAjoutA = new javax.swing.JButton();
         btnSupA = new javax.swing.JButton();
         btnOkA = new javax.swing.JButton();
         comboRef = new javax.swing.JComboBox<>();
         comboSport = new javax.swing.JComboBox<>();
+        btnModifierAccueil = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -380,6 +383,13 @@ public class Administration extends javax.swing.JDialog {
             }
         });
 
+        btnModifierPrat.setText("Modifier");
+        btnModifierPrat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierPratActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelPratLayout = new javax.swing.GroupLayout(panelPrat);
         panelPrat.setLayout(panelPratLayout);
         panelPratLayout.setHorizontalGroup(
@@ -392,9 +402,11 @@ public class Administration extends javax.swing.JDialog {
                     .addGroup(panelPratLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(panelPratLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbxSport, 0, 75, Short.MAX_VALUE)
+                            .addComponent(cbxSport, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbxAssoc, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(75, 75, 75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnModifierPrat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelPratLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnSupPrat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnOkPrat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -406,7 +418,8 @@ public class Administration extends javax.swing.JDialog {
                 .addGap(15, 15, 15)
                 .addGroup(panelPratLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAjoutP)
-                    .addComponent(btnSupPrat))
+                    .addComponent(btnSupPrat)
+                    .addComponent(btnModifierPrat))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelPratLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelPratLayout.createSequentialGroup()
@@ -440,20 +453,32 @@ public class Administration extends javax.swing.JDialog {
             }
         });
 
+        btnModifierSport.setText("Modifier");
+        btnModifierSport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierSportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelSLayout = new javax.swing.GroupLayout(panelS);
         panelS.setLayout(panelSLayout);
         panelSLayout.setHorizontalGroup(
             panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addGroup(panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAjoutS, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAjoutS, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSport, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnOkS, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSupS))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelSLayout.createSequentialGroup()
+                        .addComponent(btnOkS, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(97, Short.MAX_VALUE))
+                    .addGroup(panelSLayout.createSequentialGroup()
+                        .addComponent(btnModifierSport)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSupS)
+                        .addContainerGap())))
         );
         panelSLayout.setVerticalGroup(
             panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -461,7 +486,8 @@ public class Administration extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSupS)
-                    .addComponent(btnAjoutS))
+                    .addComponent(btnAjoutS)
+                    .addComponent(btnModifierSport))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,24 +516,38 @@ public class Administration extends javax.swing.JDialog {
             }
         });
 
+        btnModifierAccueil.setText("Modifier");
+        btnModifierAccueil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifierAccueilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelALayout = new javax.swing.GroupLayout(panelA);
         panelA.setLayout(panelALayout);
         panelALayout.setHorizontalGroup(
             panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelALayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(15, 15, 15)
+                .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelALayout.createSequentialGroup()
-                        .addComponent(btnAjoutA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSupA))
+                        .addComponent(comboRef, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelALayout.createSequentialGroup()
-                        .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(comboRef, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboSport, 0, 65, Short.MAX_VALUE))
-                        .addGap(33, 33, 33)
-                        .addComponent(btnOkA, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                        .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAjoutA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboSport, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelALayout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(btnOkA, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(panelALayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnModifierAccueil)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSupA)))))
+                .addContainerGap())
         );
         panelALayout.setVerticalGroup(
             panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -515,7 +555,8 @@ public class Administration extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAjoutA)
-                    .addComponent(btnSupA))
+                    .addComponent(btnSupA)
+                    .addComponent(btnModifierAccueil))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelALayout.createSequentialGroup()
@@ -538,7 +579,7 @@ public class Administration extends javax.swing.JDialog {
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(panelS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -694,24 +735,20 @@ public class Administration extends javax.swing.JDialog {
 
     private void btnOkAssoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkAssoActionPerformed
         int ligne = tblAssoc.getSelectedRow();
-        String mrefAsso = (String) tblAssoc.getValueAt(ligne, 0);
-        String madresse = (String) tblAssoc.getValueAt(ligne, 1);
-        String mresponsable = (String) tblAssoc.getValueAt(ligne, 2);
-        String mville = (String) tblAssoc.getValueAt(ligne, 3);
+        String FrefAsso = (String) tblAssoc.getValueAt(ligne, 0);
+        String Fresponsable = (String) tblAssoc.getValueAt(ligne, 3);
         
         String refAsso = txtRefAsso.getText();
         String adresse = txtAdresse.getText();
         String responsable = txtResp.getText();
         String ville = txtVille.getText();
         
-        if(mrefAsso != null){
-            req.modifAssoc(tblAssoc, mrefAsso, madresse, madresse, mresponsable);
+        if(ligne != -1){
+            req.modifAssoc(tblAssoc, refAsso, ville, adresse, responsable, ligne, FrefAsso, Fresponsable);
         }
         else{
             req.ajoutAssoc(tblAssoc, refAsso, ville, adresse, responsable);
         }
-        
-        
         
         txtAdresse.setVisible(false);
         txtVille.setVisible(false);
@@ -732,11 +769,22 @@ public class Administration extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSupPratActionPerformed
 
     private void btnOkPratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkPratActionPerformed
-        String assoc = (String) cbxAssoc.getSelectedItem();
-        String sport = (String) cbxSport.getSelectedItem();
-        req.ajoutPrat(tblPrat, assoc, sport);
         cbxAssoc.setVisible(false);
         cbxSport.setVisible(false);
+        btnOkPrat.setVisible(false);
+        int ligne = tblPrat.getSelectedRow();
+        String refAsso = (String) cbxAssoc.getSelectedItem();
+        String sport = (String) cbxSport.getSelectedItem();
+        String Fsport = (String) tblPrat.getValueAt(ligne, 1);
+        if(ligne != -1){
+            req.modifPrat(tblPrat, sport, refAsso, Fsport, ligne);
+        }
+        else{
+            req.ajoutPrat(tblAssoc, refAsso, sport);
+        }
+      
+        cbxSport.setVisible(false);
+        cbxAssoc.setVisible(false);
         btnOkPrat.setVisible(false);
     }//GEN-LAST:event_btnOkPratActionPerformed
 
@@ -748,8 +796,19 @@ public class Administration extends javax.swing.JDialog {
     private void btnOkSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkSActionPerformed
         txtSport.setVisible(false);
         btnOkS.setVisible(false);
+        int ligne = tblSport.getSelectedRow();
         String sport = txtSport.getText();
-        req.ajoutS(tblSport, sport);
+        String Fsport = (String) tblSport.getValueAt(ligne, 0);
+        
+        if(ligne != -1){
+            req.modifSport(tblSport, sport, Fsport, ligne);
+        }
+        else{
+            req.ajoutS(tblSport, sport);
+        }
+      
+        txtSport.setVisible(false);
+        btnOkS.setVisible(false);
     }//GEN-LAST:event_btnOkSActionPerformed
 
     private void btnSupSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupSActionPerformed
@@ -771,8 +830,19 @@ public class Administration extends javax.swing.JDialog {
 
     private void btnOkAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkAActionPerformed
         String sport = (String) comboSport.getSelectedItem();
-        String refSalle = (String) comboRef.getSelectedItem();
-        req.ajoutAccueil(tblAccueil, refSalle, sport);
+        String salle = (String) comboRef.getSelectedItem();
+        comboRef.setVisible(false);
+        comboSport.setVisible(false);
+        btnOkA.setVisible(false);
+        int ligne = tblAccueil.getSelectedRow();
+        String Fsport = (String) tblAccueil.getValueAt(ligne, 1);
+        if(ligne != -1){
+            req.modifAccueil(tblAccueil, salle, sport, Fsport, ligne);
+        }
+        else{
+            req.ajoutPrat(tblAccueil, salle, sport);
+        }
+      
         comboRef.setVisible(false);
         comboSport.setVisible(false);
         btnOkA.setVisible(false);
@@ -784,7 +854,46 @@ public class Administration extends javax.swing.JDialog {
         txtResp.setVisible(true);
         txtRefAsso.setVisible(true);
         btnOkAsso.setVisible(true);
+        int ligne = tblAssoc.getSelectedRow();
+        String refAsso = (String) tblAssoc.getValueAt(ligne, 0);
+        String ville = (String) tblAssoc.getValueAt(ligne, 1);
+        String adresse = (String) tblAssoc.getValueAt(ligne, 2);
+        String responsable = (String) tblAssoc.getValueAt(ligne, 3);
+        txtRefAsso.setText(refAsso);
+        txtVille.setText(ville);
+        txtAdresse.setText(adresse);
+        txtResp.setText(responsable);
     }//GEN-LAST:event_btnModifierAssoActionPerformed
+
+    private void btnModifierPratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierPratActionPerformed
+        cbxAssoc.setVisible(true);
+        cbxSport.setVisible(true);
+        btnOkPrat.setVisible(true);
+        cbxAssoc.disable();
+        cbxAssoc.removeAllItems();
+        int ligne = tblPrat.getSelectedRow();
+        String refAsso = (String) tblPrat.getValueAt(ligne, 0);
+        cbxAssoc.addItem(refAsso);
+    }//GEN-LAST:event_btnModifierPratActionPerformed
+
+    private void btnModifierAccueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierAccueilActionPerformed
+        comboRef.setVisible(true);
+        comboSport.setVisible(true);
+        btnOkA.setVisible(true);
+        comboRef.disable();
+        comboRef.removeAllItems();
+        int ligne = tblAccueil.getSelectedRow();
+        String salle = (String) tblAccueil.getValueAt(ligne, 0);
+        comboRef.addItem(salle);
+    }//GEN-LAST:event_btnModifierAccueilActionPerformed
+
+    private void btnModifierSportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierSportActionPerformed
+        txtSport.setVisible(true);
+        btnOkS.setVisible(true);
+        int ligne = tblSport.getSelectedRow();
+        String sport = (String) tblSport.getValueAt(ligne, 0);
+        txtSport.setText(sport);
+    }//GEN-LAST:event_btnModifierSportActionPerformed
 
     /**
      * @param args the command line arguments
@@ -837,7 +946,10 @@ public class Administration extends javax.swing.JDialog {
     private javax.swing.JButton btnAjoutP;
     private javax.swing.JButton btnAjoutS;
     private javax.swing.JButton btnAssoc;
+    private javax.swing.JButton btnModifierAccueil;
     private javax.swing.JButton btnModifierAsso;
+    private javax.swing.JButton btnModifierPrat;
+    private javax.swing.JButton btnModifierSport;
     private javax.swing.JButton btnOkA;
     private javax.swing.JToggleButton btnOkAsso;
     private javax.swing.JButton btnOkPrat;

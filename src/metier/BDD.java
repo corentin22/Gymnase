@@ -326,7 +326,79 @@ public class BDD {
         }
     }
 
-    public void modifAssoc(JTable tblAssoc, String mrefAsso, String madresse, String madresse0, String mresponsable) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void modifAssoc(JTable tblAssoc, String refAsso, String ville, String adresse, String responsable, int ligne, String FrefAsso, String Fresponsable) {
+        try{
+            Class.forName(pilote);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
+            stmt = conn.createStatement();
+            stmt.executeUpdate("SET foreign_key_checks = 0");
+            stmt.executeUpdate("UPDATE pratiquer SET refAsso = '" + refAsso + "' WHERE refAsso = '" + FrefAsso + "'");
+            stmt.executeUpdate("UPDATE association SET refAsso = '" + refAsso +"', ville = '" + ville + "', adresse = '" + adresse + "', nomresponsable = '" + responsable + "' WHERE nomresponsable = '" + Fresponsable + "'");
+            stmt.executeUpdate("SET foreign_key_checks = 1");
+            tblAssoc.setValueAt(refAsso, ligne, 0);
+            tblAssoc.setValueAt(ville, ligne, 1);
+            tblAssoc.setValueAt(adresse, ligne, 2);
+            tblAssoc.setValueAt(responsable, ligne, 3);
+        }
+        catch(SQLException sqlE){
+            System.out.println("ERREUR SQL : " + sqlE.getMessage());
+        }
+        catch(ClassNotFoundException cnfE){
+                System.out.println("ERREUR SQL : " + cnfE.getMessage());
+        }
+    }
+    
+    public void modifPrat(JTable tblPrat, String sport, String FrefAsso, String Fsport, int ligne) {
+        try{
+            Class.forName(pilote);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
+            stmt = conn.createStatement();
+            stmt.executeUpdate("SET foreign_key_checks = 0");
+            stmt.executeUpdate("UPDATE pratiquer SET nomsport = '" + sport + "' WHERE refAsso = '" + FrefAsso + "' AND nomsport = '" + Fsport + "'");
+            stmt.executeUpdate("SET foreign_key_checks = 1");
+            tblPrat.setValueAt(sport, ligne, 1);
+        }
+        catch(SQLException sqlE){
+            System.out.println("ERREUR SQL : " + sqlE.getMessage());
+        }
+        catch(ClassNotFoundException cnfE){
+                System.out.println("ERREUR SQL : " + cnfE.getMessage());
+        }
+    }
+
+    public void modifAccueil(JTable tblAccueil, String salle, String sport, String Fsport, int ligne) {
+        try{
+            Class.forName(pilote);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
+            stmt = conn.createStatement();
+            stmt.executeUpdate("SET foreign_key_checks = 0");
+            stmt.executeUpdate("UPDATE accueillir SET nomsportautorise = '" + sport + "' WHERE refsalle = '" + salle + "' AND nomsportautorise = '" + Fsport + "'");
+            stmt.executeUpdate("SET foreign_key_checks = 1");
+            tblAccueil.setValueAt(sport, ligne, 1);
+        }
+        catch(SQLException sqlE){
+            System.out.println("ERREUR SQL : " + sqlE.getMessage());
+        }
+        catch(ClassNotFoundException cnfE){
+                System.out.println("ERREUR SQL : " + cnfE.getMessage());
+        }
+    }
+    
+    public void modifSport(JTable tblSport, String sport, String Fsport, int ligne) {
+        try{
+            Class.forName(pilote);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/gymnase", "root", "");
+            stmt = conn.createStatement();
+            stmt.executeUpdate("SET foreign_key_checks = 0");
+            stmt.executeUpdate("UPDATE sport SET nomsport = '" + sport + "' WHERE nomsport = '" + Fsport + "'");
+            stmt.executeUpdate("SET foreign_key_checks = 1");
+            tblSport.setValueAt(sport, ligne, 0);
+        }
+        catch(SQLException sqlE){
+            System.out.println("ERREUR SQL : " + sqlE.getMessage());
+        }
+        catch(ClassNotFoundException cnfE){
+                System.out.println("ERREUR SQL : " + cnfE.getMessage());
+        }
     }
 }
